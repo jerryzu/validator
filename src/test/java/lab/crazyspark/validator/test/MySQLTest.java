@@ -6,7 +6,7 @@ public class MySQLTest {
     public static void main(String[] args) {
         Column col = new Column();
         col.setTableName("sys");
-        col.setColName("ID");
+        // col.setColName("ID");
         col.setDataType("varchar");
         col.setColLen(10);
         col.setPrecision(36);

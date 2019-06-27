@@ -19,7 +19,7 @@ public class MySQLColumnValidator implements ConstraintValidator<MySQLColumn, Ob
         precisionField = constraintAnnotation.precision();
         scaleField = constraintAnnotation.scale();
     }
-
+    
     @Override
     public boolean isValid(final Object value, final ConstraintValidatorContext context) {
         try {
@@ -28,14 +28,11 @@ public class MySQLColumnValidator implements ConstraintValidator<MySQLColumn, Ob
             final Object colLenObj = BeanUtils.getProperty(value, colLenField);
             final Object precisionObj = BeanUtils.getProperty(value, precisionField);
             final Object scaleObj = BeanUtils.getProperty(value, scaleField);
-            // return colNameObj == null && dataTypeObj == null || firstObj != null &&
-            // firstObj.equals(secondObj);
             String colName;
             String dataType;
             Integer colLen;
             Integer precision;
             Integer scale;
-
             if (colNameObj == null || dataTypeObj == null) {
                 return false;
             } else {
